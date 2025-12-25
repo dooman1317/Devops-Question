@@ -1,0 +1,15 @@
+#!/bin/bash
+
+read -p "please enter number : " num
+
+rand=$((RANDOM %10 +1))
+
+if [ $num -eq 10 ]
+	then 
+		 echo " yournumber is 10 " 
+elif [ $num -gt 10 ]
+ 	then
+		echo "your number is biggerthan 10"
+else
+	echo "your numbet is smallerthan 10"
+fi
