@@ -1,0 +1,23 @@
+#!/bin/bash
+
+read -p "please enter number one digit: " num
+
+min=$num
+max=$num
+
+for i in {2..20}
+do
+ read -p "please enter number $i:" num
+	if [ $num -gt $max ]
+		then
+			max=$num
+	elif [ $num -lt $min ]
+		then
+			min=$num
+fi
+
+done
+
+
+echo "biggerthan number is : $max"
+echo "smallerthan number is : $min"
