@@ -1,0 +1,26 @@
+#!/bin/bash
+
+read -p "please enter number : " num
+
+rand=$((RANDOM%100+1))
+
+
+
+while [ $num -ne $rand ]
+do	
+
+	if [ $num -gt $rand ]
+ 		then
+			echo "your number is bigger"
+		else
+			echo "your number is smaller"
+	fi
+	
+
+	read -p "try agin: " num
+done 
+
+
+
+echo " correct! number was: $rand"
+
