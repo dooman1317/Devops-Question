@@ -1,0 +1,8 @@
+#!/bin/bash
+date=$(date +%F","%R)
+output="passwd_$date.txt"
+
+cut -d: -f1,3 /etc/passwd > $output
+
+
+find -name "passwd_*.txt" -mtime +2 -delete
