@@ -1,0 +1,15 @@
+#!/bin/bash
+
+IP=$1
+USER=$2
+PASS=$3
+
+ping -c 2 $IP > /dev/null
+
+if [ $? -eq 0 ]; then
+    echo "Server is reachable"
+
+    sshpass -p "$PASS" scp /etc/passwd ${USER}@${IP}:/home/${USER}/
+else
+    echo "Server is NOT accessible"
+fi
