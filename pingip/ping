@@ -1,0 +1,19 @@
+#!/bin/bash
+
+Hostname=$(hostname)
+DATE=$(date +%F","%R)
+logfile="./logfile/ping_${Hostname}_$DATE.log"
+
+while read ip
+
+do
+
+	ping -c 2 $ip > /dev/null
+	if [ $? -eq 0 ]
+		then
+			echo "$ip is recheable" >> $logfile
+	else
+		echo "$ip is notrecheable" >> $logfile
+
+	fi	
+done < iplist.txt
